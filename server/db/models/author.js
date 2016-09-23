@@ -9,17 +9,15 @@ var Author = db.define('author', {
   biography: Sequelize.TEXT,
   imageUrl: Sequelize.STRING,
   style: {
-    type: Sequelize.JSON,
-    allowNull: false
+    type: Sequelize.JSON
   },
   lexicon: {
-    type: Sequelize.JSON,
-    allowNull:false
+    type: Sequelize.JSON
   },
   owned: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
-  }
+  },
 });
 
 module.exports = Author;
