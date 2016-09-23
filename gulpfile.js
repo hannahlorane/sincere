@@ -41,6 +41,10 @@ gulp.task('lintJS', function () {
 
 });
 
+gulp.task('seed', function() {
+    require('./seed');
+})
+
 gulp.task('buildJS', ['lintJS'], function () {
     return gulp.src(['./browser/js/app.js', './browser/js/**/*.js'])
         .pipe(plumber())
