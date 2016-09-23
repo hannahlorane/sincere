@@ -21,3 +21,5 @@ var Author = db.define('author', {
     defaultValue: false
   }
 });
+
+module.exports = Author;
