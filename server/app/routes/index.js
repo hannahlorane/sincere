@@ -4,6 +4,7 @@ module.exports = router;
 
 router.use('/members', require('./members'));
 router.use('/author', require('./author.js'));
+router.use('/flask', require('./flask.js'));
 
 // Make sure this is after all of
 // the registered routes!
