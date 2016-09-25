@@ -15,11 +15,30 @@ app.factory('generate', function () {
       return null;
     };
 
+    // generates a sentence of parts of speech
+    // after lexicate is implemented and applied, sentence will be a string
     var generateSentence = function () {
       var context = ['###', '##', '#'];
-      var sentence = "";
+      var sentence = [];
       var pos = nextPOS(style[context[0]][context[1]][context[2]]);
-      return pos;
+      while (pos != '#') {
+        console.log(pos);
+        context.shift();
+        context.push(pos);
+        sentence.push(pos);
+        pos = nextPOS(style[context[0]][context[1]][context[2]]);
+      }
+      return sentence;
+    }
+
+    /*takes in a part of speech and returns an item from
+      the lexicon. This function will be called at the end
+      of nextPOS now, but if/when I want to use smarter
+      lexical item selection (eg markov chain on word to vec)
+      I might want to send generated sentences of parts of speech
+      back to the flask server for processing*/
+    var lexicate = function (pos) {
+      //TODO
     }
 
     return generateSentence();
