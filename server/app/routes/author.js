@@ -22,10 +22,11 @@ router.get('/:id/style', function (req, res, next) {
 });
 
 router.put('/:id/style', function (req, res, next) {
+  console.log("$$$$$$$$$$$put called");
   Author.findById(req.params.id)
   .then(function (au) {
-    console.log("req body", req.body);
-    return au.update({"style": req.body})
+    console.log("author found")
+    return au.update(req.body)
   })
   .then(function (result) {
     res.send(result);

@@ -5,10 +5,13 @@ app.config(function ($stateProvider) {
     controller: 'authorController',
     resolve: {
       author: function(AuthorFactory, $stateParams) {
+        console.log("resolving author");
         return AuthorFactory.getPersonalData($stateParams.id);
       },
-      emmaStyle: function (AuthorFactory) {
-        return AuthorFactory.getEmmaStyle();
+      style: function (AuthorFactory, $stateParams) {
+        console.log('resolving style');
+        return AuthorFactory.getStyle($stateParams.id);
+        //return AuthorFactory.addEmmaStyle($stateParams.id);
       }
     }
   });

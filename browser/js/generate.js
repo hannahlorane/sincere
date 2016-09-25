@@ -13,9 +13,14 @@ app.factory('generate', function () {
       return null;
     };
 
-    //TODO --rest of this
+    var generateSentence = function () {
+      var context = ['###', '##', '#'];
+      var sentence = "";
+      // console.log('Style:', style);
+      var nextPOS = nextPOS(style[context[0]][context[1]][context[2]]);
+      return nextPOS;
+    }
 
-    var context = ['###', '##', '#'];
-
+    return generateSentence();
   };
 });
