@@ -6,5 +6,13 @@ app.factory('AuthorFactory', function ($http) {
         return author.data;
       });
   };
+
+  // obviously to be generalized to a getStyle
+  author.getEmmaStyle = function () {
+    return $http.get('/api/flask/emma/style')
+    .then(function (style) {
+      return style.data
+    })
+  }
   return author;
 });

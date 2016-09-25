@@ -6,6 +6,9 @@ app.config(function ($stateProvider) {
     resolve: {
       author: function(AuthorFactory, $stateParams) {
         return AuthorFactory.getPersonalData($stateParams.id);
+      },
+      emmaStyle: function (AuthorFactory) {
+        return AuthorFactory.getEmmaStyle();
       }
     }
   });
