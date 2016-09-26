@@ -18,8 +18,8 @@ app.config(function ($stateProvider) {
       },
       lexicon: function (AuthorFactory, $stateParams) {
         console.log('resolving lexicon');
-        return AuthorFactory.getLexicon($stateParams.id);
-        //return AuthorFactory.addGenesisLexicon($stateParams.id);
+        // return AuthorFactory.getLexicon($stateParams.id);
+        return AuthorFactory.addGenesisLexicon($stateParams.id);
       }
     }
   });

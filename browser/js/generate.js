@@ -22,10 +22,10 @@ app.factory('generate', function () {
       var sentence = [];
       var pos = nextPOS(style[context[0]][context[1]][context[2]]);
       while (pos != '#') {
-        console.log(pos);
+        console.log(pos, lexicate(pos))
         context.shift();
         context.push(pos);
-        sentence.push(pos);
+        sentence.push(lexicate(pos));
         pos = nextPOS(style[context[0]][context[1]][context[2]]);
       }
       return sentence;
@@ -38,7 +38,17 @@ app.factory('generate', function () {
       I might want to send generated sentences of parts of speech
       back to the flask server for processing*/
     var lexicate = function (pos) {
-      //TODO
+      var words = lexicon.lexicon[pos];
+      if (words) {
+        var rand = Math.random();
+        var prob = 0;
+        for (var word in words) {
+          prob += words[word];
+          if (prob >= rand) return word;
+        }
+      }
+      // DEFAULTS -- just hard-code
+      else return "NA"
     }
 
     return generateSentence();
