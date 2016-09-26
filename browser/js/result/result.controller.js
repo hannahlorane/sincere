@@ -1,4 +1,4 @@
-app.controller('authorController', function ($scope, lexicon, AuthorFactory, style, author, generate) {
+app.controller('resultController', function ($scope, lexicon, style, author, generate) {
   $scope.author = author;
   $scope.style = style;
   $scope.lexicon = lexicon;
