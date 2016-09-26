@@ -1,10 +1,7 @@
-app.controller('authorController', function ($scope, AuthorFactory, style, author, generate) {
-  console.log('in the controller')
+app.controller('authorController', function ($scope, lexicon, AuthorFactory, style, author, generate) {
   $scope.author = author;
   $scope.style = style;
-  console.log(style);
-  $scope.test = generate($scope.style);
+  $scope.lexicon = lexicon;
+  $scope.test = generate($scope.style, $scope.lexicon, 5);
   console.log($scope.test);
-
-
 })

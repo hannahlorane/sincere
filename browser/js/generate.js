@@ -1,5 +1,5 @@
 app.factory('generate', function () {
-  return function (style, lexicon, minlength) {
+  return function (style, lexicon, nOfSentences) {
     //this seems like something you should not be doing
     var style = style.style;
 
