@@ -50,11 +50,7 @@ app.factory('generate', function () {
           if (prob >= rand) return word;
         }
       }
-      // DEFAULTS -- just hard-code
-      else switch (pos) {
-        default:
-          return '';
-      }
+      else return '';
     }
 
     var text = '';
@@ -66,5 +62,5 @@ app.factory('generate', function () {
       text += ' ';
     }
     return [text, poses];
-  };
-});
+  }
+})
