@@ -18,7 +18,7 @@ app.config(function ($stateProvider) {
       },
       lexicon: function (ResultFactory, $stateParams) {
         console.log('resolving lexicon');
-        // return ResultFactory.getLexicon($stateParams.id);
+        //return ResultFactory.getLexicon($stateParams.id);
         return ResultFactory.addGenesisLexicon($stateParams.id);
       }
     }
