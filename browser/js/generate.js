@@ -22,7 +22,7 @@ app.factory('generate', function () {
       var sentence = [];
       var parse = [];
       var pos = nextPOS(style[context[0]][context[1]][context[2]]);
-      while (pos != '#') {
+      while (pos != '#' && pos != ':')
         console.log(pos, lexicate(pos))
         context.shift();
         context.push(pos);
@@ -61,6 +61,7 @@ app.factory('generate', function () {
       poses += g[1].join(' ');
       text += ' ';
     }
+    text = text.replace(/'\s.'/, /'.'/);
     return [text, poses];
-  }
-})
+  }}
+});
