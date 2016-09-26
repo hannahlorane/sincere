@@ -32,7 +32,7 @@ router.get('/:id/lexicon', function (req, res, next) {
 });
 
 router.put('/:id/style', function (req, res, next) {
-  console.log("$$$$$$$$$$$put called");
+  console.log("put called");
   Author.findById(req.params.id)
   .then(function (au) {
     console.log("author found")
