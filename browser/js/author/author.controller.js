@@ -2,7 +2,7 @@ app.controller('authorController', function ($scope, lexicon, AuthorFactory, sty
   $scope.author = author;
   $scope.style = style;
   $scope.lexicon = lexicon;
-  console.log($scope.lexicon);
+  // console.log($scope.lexicon);
   $scope.test = generate($scope.style, $scope.lexicon, 5);
-  console.log($scope.test);
+  // console.log($scope.test);
 })
